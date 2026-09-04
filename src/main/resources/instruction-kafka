@@ -1,0 +1,6 @@
+mkdir kafka-docker && cd kafka-docker
+nano docker-compose.yml
+docker compose up -d
+
+Топик должен создастся сам при первой записи в него, но если не создался
+docker exec -it kafka kafka-topics.sh --create --topic <topic_name> --bootstrap-server <IP_ADDR:PORT kafka> --partitions 1 --replication-factor 1
