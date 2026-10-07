@@ -5,7 +5,7 @@ services:
     image: apache/kafka:latest
     container_name: kafka_group2
     ports:
-      - "8090:9092"
+      - "3004:9092"
     environment:
       # Настройки узла и включение режима KRaft
       KAFKA_NODE_ID: 1
@@ -14,7 +14,7 @@ services:
 
       # Слушатели для внешних и внутренних подключений
       KAFKA_LISTENERS: 'PLAINTEXT://0.0.0.0:9092,CONTROLLER://0.0.0.0:9093'
-      KAFKA_ADVERTISED_LISTENERS: 'PLAINTEXT://192.168.14.200:8090'
+      KAFKA_ADVERTISED_LISTENERS: 'PLAINTEXT://192.168.14.83:3004'
       KAFKA_CONTROLLER_LISTENER_NAMES: 'CONTROLLER'
       KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: 'CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT'
 
